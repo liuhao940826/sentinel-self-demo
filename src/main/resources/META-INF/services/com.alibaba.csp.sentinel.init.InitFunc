@@ -1,0 +1,2 @@
+# Default slot chain builder 文件名固定的 下方配置类名根据实际情况填写
+com.self.sentinelbootdemo.config.FileDataSourceInit

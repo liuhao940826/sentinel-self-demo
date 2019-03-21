@@ -1,0 +1,11 @@
+server:
+  port: 7000
+
+project:
+  name: boot-demo
+
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8080
