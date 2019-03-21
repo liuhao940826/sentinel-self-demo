@@ -25,7 +25,7 @@ public class FallBackService {
      * @param num
      * @return
      */
-    @SentinelResource(value = "fallbackEC",blockHandler  = "FallbackEC")
+    @SentinelResource(value = "fallbackEC",entryType= EntryType.OUT, fallback = "FallbackEC")
     public String fallbackEC(long num){
         //自定义业务异常
         if(num%2==0){
@@ -36,7 +36,7 @@ public class FallBackService {
     }
 
     // Fallback 函数，函数签名与原函数一致.
-    public String FallbackEC(long num,BlockException ex) {
+    public String FallbackEC(long num) {
         return String.format("EC熔断:%d", num);
     }
 
@@ -46,7 +46,7 @@ public class FallBackService {
      * @param num
      * @return
      */
-    @SentinelResource(value = "fallbackER",blockHandler = "FallbackER")
+    @SentinelResource(value = "fallbackER",entryType= EntryType.OUT, fallback = "FallbackER")
     public String fallbackER(long num){
         //自定义业务异常
         if(num%2==0){
@@ -58,8 +58,7 @@ public class FallBackService {
 
 
     // Fallback 函数，函数签名与原函数一致.
-    public String FallbackER(long num,BlockException ex) {
-
+    public String FallbackER(long num) {
         return String.format("ER熔断:%d", num);
     }
 
@@ -68,11 +67,11 @@ public class FallBackService {
      * RT 机制的熔断
      * @return
      */
-    @SentinelResource(value ="fallbackRT" , blockHandler = "RtHandler")
+    @SentinelResource(value = "fallbackRT",entryType= EntryType.OUT, fallback = "FallbackRT")
     public String fallbackRT(){
         try {
             //睡200ms
-            TimeUnit.MILLISECONDS.sleep(3000);
+            TimeUnit.MILLISECONDS.sleep(200);
         } catch (Exception e) {
 
         }
@@ -80,10 +79,11 @@ public class FallBackService {
         return String.format("success!");
     }
 
-    public String RtHandler(BlockException ex) {
-        // Do some log here.
-        ex.printStackTrace();
-        return "RT熔断 ";
+    // Fallback 函数，函数签名与原函数一致.
+    public String FallbackRT() {
+        return String.format("RT熔断");
     }
+
+
 
 }

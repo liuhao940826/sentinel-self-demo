@@ -35,7 +35,7 @@ public class FallBackController {
 
         long endTime = System.currentTimeMillis();
 
-        System.out.println("执行时间:" + (endTime - startTime));
+        System.out.println("执行时间:" + (endTime - startTime)+"result:"+result);
 
         return result;
     }
@@ -49,7 +49,7 @@ public class FallBackController {
 
         long endTime = System.currentTimeMillis();
 
-        System.out.println("执行时间:" + (endTime - startTime));
+        System.out.println("执行时间:" + (endTime - startTime)+"result:"+result);
 
         return result;
     }
@@ -61,9 +61,11 @@ public class FallBackController {
 
         String result = fallbackservice.fallbackRT();
 
+
+
         long endTime = System.currentTimeMillis();
 
-        System.out.println("执行时间:" + (endTime - startTime));
+        System.out.println("执行时间:" + (endTime - startTime)+"result:"+result);
 
         return result;
     }
