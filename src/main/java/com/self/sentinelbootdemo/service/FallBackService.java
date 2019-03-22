@@ -71,7 +71,7 @@ public class FallBackService {
     public String fallbackRT(){
         try {
             //睡200ms
-            TimeUnit.MILLISECONDS.sleep(200);
+            TimeUnit.MILLISECONDS.sleep(2000);
         } catch (Exception e) {
 
         }

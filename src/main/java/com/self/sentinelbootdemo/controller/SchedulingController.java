@@ -1,11 +1,8 @@
 package com.self.sentinelbootdemo.controller;
 
 import com.dadaabc.service.common.web.utils.HttpUtils;
-import com.self.sentinelbootdemo.service.FlowService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import sun.nio.ch.ThreadPool;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +13,7 @@ import java.util.concurrent.*;
  * @Description:
  * @Date: Create in 3:39 PM 2019/3/20
  */
-//@RestController
+@RestController
 public class SchedulingController {
 
     @GetMapping("/schedulingFlow")

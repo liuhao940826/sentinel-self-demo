@@ -13,14 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.self.sentinelbootdemo.config;
+package com.self.sentinelbootdemo.aspect;
 
 import com.alibaba.csp.sentinel.annotation.aspectj.SentinelResourceAspect;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author Eric Zhao AOP 配置
+ * @Author: liuhao
+ * @Description:
+ * @Date: Create in 11:39 AM 2019/3/20
  */
 @Configuration
 public class AopConfiguration {

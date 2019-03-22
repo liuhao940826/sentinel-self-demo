@@ -1,10 +1,6 @@
 package com.self.sentinelbootdemo.controller;
 
-import com.alibaba.csp.sentinel.slots.block.BlockException;
-import com.alibaba.csp.sentinel.slots.block.degrade.DegradeException;
-import com.alibaba.csp.sentinel.slots.block.flow.FlowException;
 import com.self.sentinelbootdemo.service.FallBackService;
-import org.omg.CORBA.SystemException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -61,15 +57,11 @@ public class FallBackController {
 
         String result = fallbackservice.fallbackRT();
 
-
-
         long endTime = System.currentTimeMillis();
 
         System.out.println("执行时间:" + (endTime - startTime)+"result:"+result);
 
         return result;
     }
-
-
 
 }

@@ -1,32 +1,32 @@
 [
   {
+    //resource name
     "resource": "fallbackEC",
-    //资源名，资源名是限流规则的作用对象
+    //exception count
     "count": 10,
-    //当资源的平均响应时间超过阈值（DegradeRule 中的 count，以 ms 为单位）之后，资源进入准降级状态
+    //exception RATIO model
     "grade": 2,
-    //降级模式，根据 RT 降级还是根据异常比例降级  RT  1 是百分比 2 是一分钟内异常总数
+    //window time
     "timeWindow": 10
-    //降级的时间，单位为 s
   },
   {
+    //resource name
     "resource": "fallbackER",
-    //资源名，资源名是限流规则的作用对象
+    //count
     "count": 0.3,
-    //当资源的平均响应时间超过阈值（DegradeRule 中的 count，以 ms 为单位）之后，资源进入准降级状态
+    //Degrade radio model
     "grade": 1,
-    //降级模式，根据 RT 降级还是根据异常比例降级  RT  1 是百分比 2 是一分钟内异常总数
+    //window time
     "timeWindow": 10
-    //降级的时间，单位为 s
   },
   {
+    //resource name
     "resource": "fallbackRT",
-    //资源名，资源名是限流规则的作用对象
+    // average resp time
     "count": 1,
-    //当资源的平均响应时间超过阈值（DegradeRule 中的 count，以 ms 为单位）之后，资源进入准降级状态
+    // rt
     "grade": 0,
-    //降级模式，根据 RT 降级还是根据异常比例降级  RT  1 是百分比 2 是一分钟内异常总数
+    //window time
     "timeWindow": 100
-    //降级的时间，单位为 s
   }
 ]
