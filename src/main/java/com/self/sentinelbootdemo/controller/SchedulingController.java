@@ -112,4 +112,22 @@ public class SchedulingController {
         return "ok";
     }
 
+
+    @GetMapping("/schedulingHello")
+    public String Hello(Integer nums){
+
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(100,100,0,
+                TimeUnit.MINUTES,new LinkedBlockingQueue<>());
+
+        for (int i = 0; i < nums; i++) {
+            threadPoolExecutor.execute(()->{
+                String resp = HttpUtils.sendGet("http://127.0.0.1:7000//hello?num=2");
+                System.out.println(resp);
+            });
+
+        }
+
+        return "ok";
+    }
+
 }

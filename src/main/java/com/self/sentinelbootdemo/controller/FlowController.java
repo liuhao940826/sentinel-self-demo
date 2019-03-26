@@ -39,4 +39,20 @@ public class FlowController {
     }
 
 
+    @GetMapping("/hello")
+    public String  hello (long num){
+        String result="";
+        try {
+            result = flowService.hello(num);
+            return  result;
+        }catch (Exception e){
+            System.out.println("BlockException:"+totalCount++);
+            System.out.println(e.getClass());
+        }
+        System.out.println(result);
+        return result;
+
+    }
+
+
 }

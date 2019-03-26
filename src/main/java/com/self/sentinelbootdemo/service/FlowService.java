@@ -38,14 +38,14 @@ public class FlowService {
     }
 
     // 原函数
-    @SentinelResource(value = "hello", blockHandler = "exceptionHandler", fallback = "helloFallback")
+    @SentinelResource(value = "fallbackRT", blockHandler = "exceptionHandler", fallback = "helloFallback")
     public String hello(long s) {
         return String.format("Hello at %d", s);
     }
 
     // Fallback 函数，函数签名与原函数一致.
     public String helloFallback(long s) {
-        return String.format("Halooooo %d", s);
+        return String.format("HellofallBack %d", s);
     }
 
     // Block 异常处理函数，参数最后多一个 BlockException，其余与原函数一致.

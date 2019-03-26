@@ -31,7 +31,7 @@
             <scope>test</scope>
         </dependency>
 
-
+        <!--核心包-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-core</artifactId>

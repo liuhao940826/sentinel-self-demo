@@ -36,7 +36,7 @@ public class FileDataSourceInit implements InitFunc {
         ClassLoader classLoader = getClass().getClassLoader();
         String flowRulePath = URLDecoder.decode(classLoader.getResource("FlowRule.json").getFile(), "UTF-8");
         String degradeRulePath = URLDecoder.decode(classLoader.getResource("DegradeRule.json").getFile(), "UTF-8");
-//        String systemRulePath = URLDecoder.decode(classLoader.getResource("SystemRule.json").getFile(), "UTF-8");
+        String systemRulePath = URLDecoder.decode(classLoader.getResource("SystemRule.json").getFile(), "UTF-8");
 
         // Data source for FlowRule 限流规则
         FileRefreshableDataSource<List<FlowRule>> flowRuleDataSource = new FileRefreshableDataSource<>(
@@ -48,12 +48,11 @@ public class FileDataSourceInit implements InitFunc {
                 = new FileRefreshableDataSource<>(
                 degradeRulePath, degradeRuleListParser);
         DegradeRuleManager.register2Property(degradeRuleDataSource.getProperty());
-
-//        // Data source for SystemRule 系统规则
-//        FileRefreshableDataSource<List<SystemRule>> systemRuleDataSource
-//                = new FileRefreshableDataSource<>(
-//                systemRulePath, systemRuleListParser);
-//        SystemRuleManager.register2Property(systemRuleDataSource.getProperty());
+        // Data source for SystemRule 系统规则
+        FileRefreshableDataSource<List<SystemRule>> systemRuleDataSource
+                = new FileRefreshableDataSource<>(
+                systemRulePath, systemRuleListParser);
+        SystemRuleManager.register2Property(systemRuleDataSource.getProperty());
     }
 
 }

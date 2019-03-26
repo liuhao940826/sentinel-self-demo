@@ -23,7 +23,7 @@
     //resource name
     "resource": "fallbackRT",
     // average resp time
-    "count": 1,
+    "count": 5,
     // rt
     "grade": 0,
     //window time
