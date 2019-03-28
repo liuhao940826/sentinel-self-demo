@@ -31,31 +31,16 @@
             <scope>test</scope>
         </dependency>
 
-        <!--核心包-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-core</artifactId>
-            <version>1.5.0</version>
+            <artifactId>spring-boot-starter-ahas-sentinel-client</artifactId>
+            <version>1.1.2</version>
         </dependency>
 
-        <!--通信包-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-transport-simple-http</artifactId>
-            <version>1.5.0</version>
-        </dependency>
-
-        <!--基于注解处理的依赖-->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-annotation-aspectj</artifactId>
-            <version>1.5.0</version>
-        </dependency>
-        <!--spring boot 和cloud 项目可以通过这个依赖结合配置文件yml 来给控制台-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
-            <version>0.2.1.RELEASE</version>
+            <artifactId>ahas-sentinel-client</artifactId>
+            <version>1.1.2</version>
         </dependency>
 
         <dependency>

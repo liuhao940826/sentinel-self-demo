@@ -1,11 +1,13 @@
 server:
   port: 7000
 
+#ahas 指定的应用名字
 project:
-  name: boot-demo
+  name: sentinel-ahas-boot-demo
 
-spring:
-  cloud:
-    sentinel:
-      transport:
-        dashboard: localhost:8080
+ahas:
+  #指定您要接入的特定的 AHAS 环境
+  namespace: default
+  #通过公网 Region 接入时，需要您的证书信息；其他地域不需要证书。
+  #License 获取方式：在 AHAS 控制台左侧导航栏选择流控降级，选择右上角应用接入，在配置启动参数页签下，找到您的 License 信息。
+  license: be8150d6843f433cafdec5b82799b331
