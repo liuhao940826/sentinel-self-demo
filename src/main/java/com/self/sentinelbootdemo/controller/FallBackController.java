@@ -16,12 +16,6 @@ public class FallBackController {
     @Autowired
     private FallBackService fallbackservice;
 
-    private static volatile int totalCount=0;
-    private static volatile int degradeCount=0;
-    private static volatile int flockCount=0;
-    private static volatile int sysCount=0;
-
-
     @GetMapping("/fallbackEC")
     public String fallbackEC(long num) {
 

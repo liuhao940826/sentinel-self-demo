@@ -1,6 +1,5 @@
 package com.self.sentinelbootdemo.service;
 
-import com.alibaba.csp.sentinel.EntryType;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.self.sentinelbootdemo.utils.ExceptionUtil;

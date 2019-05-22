@@ -17,8 +17,6 @@ public class FlowController {
 
 
     private static volatile int totalCount=0;
-    private static volatile int degradeCount=0;
-    private static volatile int blockCount=0;
 
     @Autowired
     FlowService flowService;

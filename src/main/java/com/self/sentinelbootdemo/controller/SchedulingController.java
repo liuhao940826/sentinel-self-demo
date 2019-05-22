@@ -40,28 +40,6 @@ public class SchedulingController {
     @GetMapping("/schedulingFallBackRT")
     public String fallBackRT(Integer nums){
 
-//        Executor executor = Executors.newFixedThreadPool(nums, (Runnable r) -> {
-//            Thread t = new Thread(r);
-//            t.setDaemon(true);
-//            return t;
-//        });
-////
-////        List<CompletableFuture<Void>> futures =new ArrayList<>();
-////
-////        for (int i = 0; i < nums; i++) {
-////            CompletableFuture<Void> future;
-////            if(i%2==0){
-////                future  =CompletableFuture.runAsync(() ->
-////                        HttpUtils.sendGet("http://127.0.0.1:7000//fallback?num=2"), executor);
-////            }else {
-////                future  =CompletableFuture.runAsync(() ->
-////                        HttpUtils.sendGet("http://127.0.0.1:7000//fallback?num=1"), executor);
-////            }
-////
-////            futures.add(future);
-////        }
-////
-////        return "ok";
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(100,100,0,
                 TimeUnit.MINUTES,new LinkedBlockingQueue<>());
 

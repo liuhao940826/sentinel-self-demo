@@ -27,6 +27,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AopConfiguration {
 
+    /**
+     * 添加sentinel 切面
+     * @return
+     */
     @Bean
     public SentinelResourceAspect sentinelResourceAspect() {
 
